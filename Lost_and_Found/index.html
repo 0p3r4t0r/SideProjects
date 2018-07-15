@@ -1,0 +1,42 @@
+<html>
+<head>
+    <link href="style.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    <title>Lost and found</title>
+</head>    
+    
+<body>
+    <h1>Lost and found</h1>
+    
+    <!Search form>
+    <form id="form" action="#" method="post">
+        <div>
+        Lost property:
+        <input type="text" placeholder="Search..." name="search">
+        <button id="magn_glass" type="submit"><i class="material-icons">search</i></button>
+        </div>
+    
+        <div>
+        <h2>Advanced search</h2>
+        Colour:
+        <select name="colour" placeholder="select">
+            <option value="" selected></option>
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="yellow">Yellow</option>
+        </select>
+        Date lost:
+        <input name="date" type="date" placeholder="YYYY/MM/DD">
+        Last known location:
+        <input name="place" type="text" placeholder="">
+        </div>    
+        
+        <input type="reset" class="button" value="Clear">
+        <input type="submit" class="button" value="Search">
+    </form>
+    
+    <!Image gets recovered and shown>
+    
+</body>    
+</html>
