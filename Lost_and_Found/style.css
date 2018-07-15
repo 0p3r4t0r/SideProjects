@@ -2,6 +2,7 @@
 
 body{
     background-color: beige
+
 }
 
 
@@ -14,8 +15,9 @@ h1{
 
 /*Form*/
 form{
-    text-align: center;
+    text-align: justify;
 }
+
 
 
 .input{
@@ -26,12 +28,17 @@ form{
     margin: 10px 6px;
     padding: 3px 5px;
     cursor: pointer;
+    text-align: center;
 }
 
 #magn_glass{
-    padding: 3px 5px;
-    background: #ddd;
-    cursor: pointer;
-    
+  padding: 3px 5px;
+  background: #ddd;
+  cursor: pointer;
 }
 
+
+/*Navigation*/
+.navigation{
+    text-align: right;
+}
