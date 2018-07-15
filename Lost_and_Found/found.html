@@ -2,28 +2,26 @@
 <head>
     <link href="style.css" rel="stylesheet" media="all">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-	
-    <title>Lost Items</title>
+    
+    <title>Found Items</title>
 </head>    
     
 <body>
     <h1>Lost and found</h1>
-    <div class="navigation">
-    <a href="found.html">Found items</a>
-    </div>
     
-    <h2>Lost</h2>    
-     
+    <div class="navigation" >
+    <a href="index.html">Lost items</a>
+    </div>
+        
+    <h2>Found Items</h2>
+    
+   
+    
     <!--Search form-->
-    <form id="form1" action="#" method="post">
+    <form id="form" action="#" method="post">
     <div>
-    Lost property:
-    <input type="text" placeholder="Search..." name="name" value="">
-    <!--<button id="magn_glass" type="submit"><i class="material-icons">search</i></button>-->
-    </div>
-    
-    <div>
-    <h2>Advanced options</h2>
+    Found property:
+    <input type="text" placeholder="Search..." name="search"><br>
     Colour 1:
     <select name="colour1" id="colour1" placeholder="select">
         <option value="" selected></option>
@@ -54,10 +52,14 @@
        	<option value="white">White</option>
 		<option value="yellow">Yellow</option>
     </select>    
-	
+		
     Date lost:
-    <!--One thing to note is that the displayed date format differs from the actual value — the displayed date format will be chosen based on the set locale of the user's browser, whereas the date value is always formatted yyyy-mm-dd. ---developer.mozilla.org-->
-	<input id="datePicker_lost" name="date" type="date" placeholder="YYYY-MM-DD" value="">
+	<script> 
+	//broken needs fixing later on
+	var today2 = new Date().toISOString().slice(0, 10);
+	document.getElementById("datePicker_found").setAttribute("max", today2);
+	</script>
+	<input id="datePicker_found" name="date" type="date" placeholder="YYYY-MM-DD" value="">
 		
     Last known location:
     <select name="place" placeholder="select">
@@ -67,37 +69,17 @@
 		<option value="class02">Classroom02</option>
 		<option value="library">Library</option>
 		<option value="restroom">Restroom</option>
-	</select>
+	</select><br>
 		
+    Upload image: (to be added)    
     </div>    
         
     <input type="reset" class="button" value="Clear">
-    <input type="submit" class="button" value="Search">
-
+    <input type="submit" class="button" value="Submit">
+    
+	
     </form>
-	
-	<button onclick="getOption()">Get Colour 1 (test)</button>
-	<script>
-		function getOption() {
-			"use strict";
-			var obj = document.getElementById("colour1");
-    		document.getElementById("mydiv").innerHTML = "Colour 1: " + obj.options[obj.selectedIndex].text;
-		}
-	</script>
     
-    <!-- Image gets recovered and shown-->
-    <h2>Results</h2>
-    <div id="mydiv"></div>
-	<div id="result"></div>
-	<div id="test"></div>
-	
-    
-    
-    <!--
-    <div>
-    <img src = search_name("hamster").src width="250px" alt="hamster">
-    </div>
-    -->
-	<script src="search.js"></script>
+  
 </body>    
 </html>
