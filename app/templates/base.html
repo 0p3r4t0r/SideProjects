@@ -1,0 +1,36 @@
+<!-- Base template with navigation bar -->
+
+<html>
+    <head>
+		<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+		<!--Icon at the top of tab-->
+		<link rel="shortcut icon" href="">
+		
+		{% if title %}
+        <title>{{ title }} - Lost and Found</title>
+		{% else %}
+		<title>Welcome to Lost and Found</title>
+		{% endif %}
+    </head>
+    <body>
+    	<div class="block"> Lost and found: 
+			<a href="index">Home</a> 
+			<a href="lost">Lost</a>
+		</div>
+		<hr>
+		<!--Enable rendering of flash stored messages -->
+		<div class="block">
+		{% with messages = get_flashed_messages() %}
+		{% if messages %}
+		<ul>
+			{% for message in messages %}
+			<li> {{ message }}</li>
+			{% endfor %}
+		</ul>
+		{% endif %}
+		{% endwith %}
+		</div>
+		
+		{% block content %}{% endblock %}
+	</body>
+</html>
