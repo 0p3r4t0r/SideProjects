@@ -1,0 +1,44 @@
+@charset "utf-8";
+
+body{
+    background-color: beige
+
+}
+
+
+/*Main title*/
+h1{
+    text-align: center;
+}
+
+
+
+/*Form*/
+form{
+    text-align: justify;
+}
+
+
+
+.input{
+    
+}
+
+.button{
+    margin: 10px 6px;
+    padding: 3px 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+#magn_glass{
+  padding: 3px 5px;
+  background: #ddd;
+  cursor: pointer;
+}
+
+
+/*Navigation*/
+.navigation{
+    text-align: right;
+}
