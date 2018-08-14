@@ -1,39 +1,119 @@
-@charset "utf-8";
-
-/*Main title*/
-h1{
-	text-align: center;
-	font-size: 36px;
-	font-family: sans-serif;
+:root{
+	--color-light: #2989A4;
+	--color-medium: #057D9F;
+	--color-dark: #04607B;
+	--sec-color: #FFB300;
+	--ter-color: #E94025;
 }
 
-
-/*body*/
+/* Body */
 body{
-	background-image: url(img/abstract.jpg);
-	background-size: cover;
-	
-	font-family: sans-serif;
+	/*background-image: url(img/abstract.jpg);*/
+	background-image: url(img/pattern.png);
+	background-repeat: repeat;
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+	font-family: Helvetica, sans-serif;
 }
 
-
-.block{
+.container{
 	width: 80%;
 	margin: auto;
-	margin-top: 15px;
+}
+
+
+/* Header */
+header{
+	color: white;
+	background-color: var(--color-dark);
+	padding: 20px;
+	margin: 0px;
+	border-bottom: 2px solid var(--sec-color);
+	min-height: 60px;
+	overflow: hidden;
+}
+
+header h1{
+	margin: 0;
+	padding: 10px 0 0 0;
+	float: left;
+}
+
+nav ul{
+		margin: 0;
+		padding: 0;
+}
+
+nav{
+	margin: 0;
+	padding: 22px 0 0 0;
+	float: right;
+}
+
+nav ul{
+	padding: 0;
+	margin: 0;
+}
+
+nav li{
+	margin: 0;
+	padding: 0 0 0 20px;
+	display: inline;
+}
+
+nav a:link, nav a:visited{
+	color: white;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+nav a:hover{
+	font-weight: bold;
+	color: lightgray;
+}
+
+header .active a{
+	color: #C58A00;
+}
+
+
+/* Main */
+
+h1{
+	text-align: center;
+}
+
+/*Welcome block animation*/
+/*#welcome {
+	animation-name: fall-down;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes fall-down {
+	0% {
+		top: 200px;
+	}
+	100% {
+		top: 50px;
+	}
+}
+*/
+/*margin-top: 15px;
 	margin-bottom: 10px;
 	padding: 10px 20px;
 	
 	text-align: center;
 	align-content: center;
 	align-self: center;
-	
-	
+		
 	background-color: white;
 	
-	border: navy 1px solid;
-	border-radius: 10px;
-}
+	border: var(--color-dark) 1px solid;
+	border-radius: 10px;*/
 
 
 /*Form*/
@@ -69,20 +149,46 @@ table input[type="date"]{
 	text-align: right;
 }
 
-
-#form1 input:focus{
+.EntryForm input:focus{
+	background-color: honeydew;
+}
+.EntryForm select:focus{
 	background-color: honeydew;
 }
 
-#form1 select:focus{
-	background-color: honeydew;
+/*
+Coloured dropdown menu in colour selection
+NONE OF THESE WORKS
+option[value="blue"] {
+	background-color: linear-gradient(90deg, white, white, blue);
 }
 
+option[value="black"] {
+	background: linear-gradient(90deg, white, white, blue);
+}
 
-/*Search/Clear buttons*/
-.btns{
-	margin: 10px;
+option[value="red"] {
+	border: 10px solid blue;
+}
+
+ONLY THIS WORKS
+option[value="yellow"] {
+	background-color: blue;
+}
+*/
+
+
+/* Search/Clear buttons */
+.button{
 	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 10px 20px 10px 20px;
+	background-color: var(--ter-color);
+	border-radius: 10px;
+	text-transform: uppercase;
 }
 
 .btns input{
@@ -92,19 +198,12 @@ table input[type="date"]{
 	margin: 10px;
 }
 
-.btns input:hover{
+.button input:hover{
 	opacity: 0.7;
 }
 
 .btns:active{
 	color: #fff;
-}
-
-
-
-/*Navigation*/
-.navigation{
-    text-align: right;
 }
 
 

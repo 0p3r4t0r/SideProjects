@@ -1,37 +1,60 @@
 <!-- Base template with navigation bar -->
+<!DOCTYPE html>
 
 <html>
-    <head>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<meta name="description" content="Simple lost and found application">
+		<meta name="keywords" content="">
+		<meta name="author" content="Cristina Valle">
+		
 		<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
 		<!--Icon at the top of tab-->
 		<link rel="shortcut icon" href="">
-		
+
 		{% if title %}
-        <title>{{ title }} - Lost and Found</title>
+		<title>Lost and Found | {{ title }}</title>
 		{% else %}
-		<title>Welcome to Lost and Found</title>
+		<title>Lost and Found | Welcome</title>
 		{% endif %}
-    </head>
-    <body>
-    	<div class="block"> Lost and found: 
-			<a href="index">Home</a> 
-			<a href="lost">Lost</a>
-			<a href="found">Found</a>
-		</div>
-		<hr>
+	</head>
+	<body>
+		<header>
+			<div class="container">
+				<h1>Lost and found</h1>
+					<nav>
+						{% set navigation_bar = [("/", "index", "Home"), ("/lost", "lost", "Lost"), ("/found", "found", "Found")] -%}
+						{% set active_page = active_page|default("index") -%}
+						<ul>
+							{% for href, id, caption in navigation_bar %}
+								<li {% if id == active_page %} class="active" {% endif
+										%}><a href="{{ href|e }}">{{ caption|e }}</a>
+								</li>
+							{% endfor %}
+						</ul>
+				</nav>
+			</div>
+		</header>
 		<!--Enable rendering of flash stored messages -->
-		<div class="block">
-		{% with messages = get_flashed_messages() %}
-		{% if messages %}
-		<ul>
-			{% for message in messages %}
-			<li> {{ message }}</li>
-			{% endfor %}
-		</ul>
-		{% endif %}
-		{% endwith %}
-		</div>
-		
+		<section>
+			<div class="container">
+			{% with messages = get_flashed_messages() %}
+				{% if messages %}
+					<ul>
+						{% for message in messages %}
+						<li> {{ message }}</li>
+						{% endfor %}
+					</ul>
+				{% endif %}
+			{% endwith %}
+			</div>
+		</section>
+
 		{% block content %}{% endblock %}
+		
+		<footer>
+			Lost and Found, Copyright &copy; 2018
+		</footer>
 	</body>
 </html>
