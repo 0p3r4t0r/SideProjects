@@ -1,4 +1,5 @@
 :root{
+	--color-very-light: #4B9FB7;
 	--color-light: #2989A4;
 	--color-medium: #057D9F;
 	--color-dark: #04607B;
@@ -81,10 +82,93 @@ header .active a{
 
 
 /* Main */
-
-h1{
+main h1{
 	text-align: center;
 }
+
+main form{
+	min-width: 200px;
+	text-align: center;
+	margin: auto;
+}
+
+main table{
+	margin: auto;
+	text-align: left;
+}
+
+table th, table td{
+	padding: 5px;
+}
+
+table th{
+	width: 10em;
+	text-align: left;
+	vertical-align: middle;
+}
+
+table input[type="text"]{
+	width: 100%;
+	padding: 5px;
+}
+
+table select{
+	width: 80%;
+	padding: 5px;
+}
+
+table input[type="date"]{
+	width: 12em;
+	padding: 5px;
+	text-align: right;
+}
+
+.EntryForm input:focus{
+	background-color: honeydew;
+}
+.EntryForm select:focus{
+	background-color: honeydew;
+}
+
+
+/* Search/Clear buttons */
+main .button{
+	height: 40px;
+	width: 90px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 40px;
+	margin-bottom: 10px;
+	padding: 5px;
+	border: 3px solid var(--sec-color);
+	border-radius: 8px;
+	text-transform: uppercase;
+	box-shadow: 3px 3px 2px rgba(0,0,0,0.2);
+}
+
+
+main .button:hover{
+	background-color: var(--sec-color);
+}
+
+
+/* Footer */
+footer{
+	font-size: 12px;
+	text-align: center;
+	padding: 15px;
+	margin-top: 110px;
+	background-color: var(--color-very-light);
+}
+
+
+/*Cursor pointer*/
+input[type="reset"],
+input[type="submit"]{
+	cursor: pointer;
+}
+
 
 /*Welcome block animation*/
 /*#welcome {
@@ -117,44 +201,6 @@ h1{
 
 
 /*Form*/
-table{
-    text-align: left;
-}
-
-table th, table td{
-	padding: 5px;
-}
-
-table th{
-	width: 10em;
-	
-	text-align: left;
-	vertical-align: middle;
-}
-
-table input[type="text"]{
-	width: 20em;
-	padding: 5px;
-}
-
-table select{
-	width: 20em;
-	padding: 5px;
-}
-
-table input[type="date"]{
-	width: 12em;
-	padding: 5px;
-	
-	text-align: right;
-}
-
-.EntryForm input:focus{
-	background-color: honeydew;
-}
-.EntryForm select:focus{
-	background-color: honeydew;
-}
 
 /*
 Coloured dropdown menu in colour selection
@@ -178,20 +224,7 @@ option[value="yellow"] {
 */
 
 
-/* Search/Clear buttons */
-.button{
-	text-align: center;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 10px;
-	margin-bottom: 10px;
-	padding: 10px 20px 10px 20px;
-	background-color: var(--ter-color);
-	border-radius: 10px;
-	text-transform: uppercase;
-}
-
-.btns input{
+/*.button input{
 	width: 100px;
 	padding: 5px 0px;
 	font-size: 14px;
@@ -199,17 +232,12 @@ option[value="yellow"] {
 }
 
 .button input:hover{
-	opacity: 0.7;
+	opacity: 0.1;
 }
 
 .btns:active{
 	color: #fff;
 }
+*/
 
-
-/*Cursor pointer*/
-input[type="reset"],
-input[type="submit"]{
-	cursor: pointer;
-}
 

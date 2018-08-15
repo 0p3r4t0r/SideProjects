@@ -7,7 +7,6 @@
 <main>
 	<div class="container">
 		<h1>Lost items </h1>
-
 		<!--Search form-->
 		<form id="form_lost" action="" method="post" novalidate>
 			{{ form.hidden_tag() }}
@@ -57,9 +56,7 @@
 					</td>
 				</tr>
 			</table>
-			<div>
-				{{ form.submit(class="button") }}
-			</div>
+			{{ form.submit(class="button") }}
 		</form>
 	</div>
 </main>
