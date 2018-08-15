@@ -1,78 +1,65 @@
 <!-- Inherit from base template -->
 
 {% extends "base.html" %}
+{% set active_page = "lost" %}
 
 {% block content %}
-    <div class="block">
-	<h1>Lost items </h1>
-	
-	<!--Search form-->
-	<form id="form_lost" action="" method="post" novalidate>
-	{{ form.hidden_tag() }}
-	<table class=EntryForm>
-	<tr>
-		<th>{{ form.item.label }}</th>
-		<td>
-			{{ form.item(size=32) }}
-			{% for error in form.item.errors %}
-			<span style="color: red;">[{{ error }}]</span>
-			{% endfor %}
-		</td>
-	</tr>
-	<tr>
-		<th>{{ form.colour1.label }}</th>
-		<td>
-			<select name="colour1" id="colour1" placeholder="select">
-				{% for colour in form.colours %}
-					<option value= "{{ colour[0] }}"> {{ colour[1] }}</option>
-				{% endfor %}
-				{% for error in form.colour1.errors %}
-					<span style="color: red;">[{{ error }}]</span>
-				{% endfor %}
-			</select>
-		</td>
-	</tr>
-	<tr>
-		<th>{{ form.colour2.label }}</th>
-		<td>
-			<select name="colour2" id="colour2" placeholder="select">
-				{% for colour in form.colours %}
-					<option value= "{{ colour[0] }}"> {{ colour[1] }}</option>
-				{% endfor %}
-				{% for error in form.colour1.errors %}
-					<span style="color: red;">[{{ error }}]</span>
-				{% endfor %}
-			</select>
-		</td>
-	</tr>
-	<tr>
-		<th>{{ form.location.label }}</th>
-		<td>
-			<select name="location" id="location" placeholder="select">
-				{% for location in form.locations %}
-					<option value= "{{ location[0] }}"> {{ location[1] }}</option>
-				{% endfor %}
-				{% for error in form.location.errors %}
-					<span style="color: red;">[{{ error }}]</span>
-				{% endfor %}
-			</select>
-		</td>
-	</tr>
-	<tr>
-		<th>{{ form.date.label }}</th>
-		<td>
-			{{ form.date(id="datePicker_lost") }}
-			{% for error in form.date.errors %}
-			<span style="color: red;">[{{ error }}]</span>
-			{% endfor %}
-		</td>
-	</tr>
-	</table>
-	<p>
-		{{ form.submit() }}
-	</p>
-	</form>
+<main>
+	<div class="container">
+		<h1>Lost items </h1>
+		<!--Search form-->
+		<form id="form_lost" action="" method="post" novalidate>
+			{{ form.hidden_tag() }}
+			<table class=EntryForm>
+				<tr>
+					<th>{{ form.item.label }}</th>
+					<td>
+						{{ form.item(size=32) }}
+						{% for error in form.item.errors %}
+							<span style="color: red;">[{{ error }}]</span>
+						{% endfor %}
+					</td>
+				</tr>
+				<tr>
+					<th>{{ form.colour1.label }}</th>
+					<td> 
+						{{ form.colour1 }}
+						{% for error in form.colour1.errors %}
+							<span style="color: red;">[{{ error }}]</span>
+						{% endfor %}
+					</td>
+				<tr>
+					<th>{{ form.colour2.label }}</th>
+					<td>
+						{{ form.colour2 }}
+						{% for error in form.colour1.errors %}
+							<span style="color: red;">[{{ error }}]</span>
+						{% endfor %}
+					</td>
+				</tr>
+				<tr>
+					<th>{{ form.location.label }}</th>
+					<td>
+						{{ form.location }}
+						{% for error in form.location.errors %}
+							<span style="color: red;">[{{ error }}]</span>
+						{% endfor %}
+					</td>
+				</tr>
+				<tr>
+					<th>{{ form.date.label }}</th>
+					<td>
+						{{ form.date(id="datePicker_lost") }}
+						{% for error in form.date.errors %}
+							<span style="color: red;">[{{ error }}]</span>
+						{% endfor %}
+					</td>
+				</tr>
+			</table>
+			{{ form.submit(class="button") }}
+		</form>
 	</div>
+</main>
 
 <script src="static/time.js"></script>
 {% endblock %}
