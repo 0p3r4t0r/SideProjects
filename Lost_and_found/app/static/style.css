@@ -59,7 +59,7 @@ nav ul{
 
 nav li{
 	margin: 0;
-	padding: 0 0 0 20px;
+	padding: 0 10px 0 10px;
 	display: inline;
 }
 
@@ -76,7 +76,7 @@ nav a:hover{
 	color: lightgray;
 }
 
-header .active a{
+nav .active a{
 	color: #C58A00;
 }
 
@@ -132,7 +132,7 @@ table input[type="date"]{
 
 
 /* Search/Clear buttons */
-main .button{
+form .button{
 	height: 40px;
 	width: 90px;
 	text-align: center;
@@ -148,8 +148,15 @@ main .button{
 }
 
 
-main .button:hover{
+form .button:hover{
 	background-color: var(--sec-color);
+}
+
+
+/* Cursor pointer */
+input[type="reset"],
+input[type="submit"]{
+	cursor: pointer;
 }
 
 
@@ -158,17 +165,26 @@ footer{
 	font-size: 12px;
 	text-align: center;
 	padding: 15px;
-	margin-top: 110px;
+	margin-top: 106px;
 	background-color: var(--color-very-light);
 }
 
 
-/*Cursor pointer*/
-input[type="reset"],
-input[type="submit"]{
-	cursor: pointer;
+/* Media Queries */
+/* Tablet size or smaller (smartphones) */
+@media(max-width: 768px) {
+	header h1, header nav, header li{
+		float: none;
+		width: 100%;
+		text-align: center;
+	}
 }
 
+
+
+
+
+/* UNUSED/TESTS */
 
 /*Welcome block animation*/
 /*#welcome {
@@ -200,7 +216,7 @@ input[type="submit"]{
 	border-radius: 10px;*/
 
 
-/*Form*/
+
 
 /*
 Coloured dropdown menu in colour selection
@@ -224,20 +240,5 @@ option[value="yellow"] {
 */
 
 
-/*.button input{
-	width: 100px;
-	padding: 5px 0px;
-	font-size: 14px;
-	margin: 10px;
-}
-
-.button input:hover{
-	opacity: 0.1;
-}
-
-.btns:active{
-	color: #fff;
-}
-*/
 
 
