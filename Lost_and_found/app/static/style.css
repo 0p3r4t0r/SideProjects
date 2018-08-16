@@ -7,9 +7,27 @@
 	--ter-color: #E94025;
 }
 
-/* Body */
+/* Flexbox */
+html, body{
+	height: 100%;
+}
+
 body{
-	/*background-image: url(img/abstract.jpg);*/
+	display: flex;
+	flex-direction: column;
+}
+
+.content{
+	flex: 1 0 auto;
+}
+
+footer{
+	flex-shrink: 0;
+}
+
+
+/* Body - global */
+body{
 	background-image: url(img/pattern.png);
 	background-repeat: repeat;
 	margin: 0;
@@ -22,6 +40,7 @@ body{
 	width: 80%;
 	margin: auto;
 }
+
 
 
 /* Header */
@@ -164,8 +183,7 @@ input[type="submit"]{
 footer{
 	font-size: 12px;
 	text-align: center;
-	padding: 15px;
-	margin-top: 106px;
+	padding: 12px;
 	background-color: var(--color-very-light);
 }
 
@@ -177,6 +195,14 @@ footer{
 		float: none;
 		width: 100%;
 		text-align: center;
+	}
+	
+	.container{
+		width: 100%;
+	}
+	
+	table input[type="text"]{
+	width: 80%;
 	}
 }
 
